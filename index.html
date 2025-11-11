@@ -1,250 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>Journal of Addiction and Mental Health – JAMH</title>
-<link rel="stylesheet" href="assets/style.css">
-
-<style>
-
-/* NAV BAR */
-.navbar {
-    background: #003366;
-    padding: 12px 20px;
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-}
-.navbar a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-.navbar a:hover {
-    color: #4da3ff;
-}
-
-/* HERO */
-.hero {
-    margin-top: 25px;
-    padding: 40px;
-    background: linear-gradient(135deg, #4da3ff, #003366);
-    color: white;
-    text-align: center;
-    border-radius: 10px;
-    animation: fadeIn 1s ease;
-}
-.hero h1 {
-    font-size: 40px;
-    font-weight: bold;
-}
-.hero p {
-    font-size: 18px;
-    margin-top: 8px;
-}
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to   { opacity: 1; transform: translateY(0); }
-}
-
-/* SEARCH BAR */
-.search-box {
-    margin-top: 25px;
-    text-align: center;
-}
-.search-box input {
-    width: 90%;
-    max-width: 550px;
-    padding: 12px;
-    border-radius: 8px;
-    border: 1px solid #aac8ff;
-    font-size: 16px;
-}
-
-/* ISSUE INFO */
-.issue-info {
-    background: white;
-    padding: 25px;
-    border: 2px solid #4da3ff;
-    border-radius: 10px;
-    margin: 25px 0;
-    text-align: center;
-}
-.issue-info h2 {
-    margin-bottom: 5px;
-}
-
-/* ARTICLE CARDS */
-.article-card {
-    background: white;
-    padding: 18px;
-    margin: 18px 0;
-    border-radius: 8px;
-    border-left: 6px solid #4da3ff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.07);
-}
-.article-card a {
-    color: #003366;
-    font-size: 20px;
-    font-weight: bold;
-    text-decoration: none;
-}
-.article-card a:hover {
-    color: #0066cc;
-}
-
-/* HEADERS */
-.section-title {
-    font-size: 28px;
-    margin-top: 40px;
-    color: #003366;
-    border-left: 6px solid #4da3ff;
-    padding-left: 12px;
-}
-
-/* FOOTER */
-.footer {
-    margin-top: 50px;
-    background: #003366;
-    color: white;
-    padding: 28px;
-    text-align: center;
-    border-radius: 10px;
-}
-
-.social-icons a {
-    color: white;
-    margin: 0 12px;
-    font-size: 22px;
-    text-decoration: none;
-}
-.social-icons a:hover {
-    color: #4da3ff;
-}
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Journal of Addiction & Mental Health</title>
+  <link rel="stylesheet" href="assets/style.css">
 </head>
-
 <body>
 
-<!-- ✅ NAVIGATION BAR -->
-<div class="navbar">
+<header>
+  <h1>Journal of Addiction & Mental Health (JAMH)</h1>
+  <nav>
     <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="guidelines.html">Author Guidelines</a>
-    <a href="submit.html">Submit Paper</a>
-    <a href="archive.html">Archive</a>
-</div>
+    <a href="submit.html">Submit Manuscript</a>
+    <a href="#latest">Current Issue</a>
+    <a href="#about">About</a>
+  </nav>
+</header>
 
-<!-- ✅ HERO BANNER (NEW) -->
-<div class="hero">
-    <h1>Journal of Addiction and Mental Health (JAMH)</h1>
-    <p>Advancing research, clinical practice, and policy in addiction and mental health.</p>
-</div>
-
-<!-- ✅ SEARCH BAR (NEW) -->
-<div class="search-box">
-    <input type="text" id="searchInput" placeholder="Search articles..." onkeyup="searchArticles()">
-</div>
-
-<!-- ✅ ISSUE DETAILS -->
-<div class="issue-info">
-    <h2>Current Issue</h2>
-    <p><strong>Volume 1 • Issue 1 • July–September 2025</strong></p>
-    <p>ISSN: <strong>3107-8398</strong></p>
-</div>
-
-<!-- ✅ ARTICLE LIST (OLD + NEW MIX) -->
-<h2 class="section-title">Articles</h2>
-
-<div id="articleList">
-
-<div class="article-card">
-    <a href="articles/Article1.pdf">#Work With Social Media</a>
-</div>
-
-<div class="article-card">
-    <a href="articles/JAMH-2.pdf">From Experimentation to Dependency</a>
-</div>
-
-<div class="article-card">
-    <a href="articles/JAMH-3.pdf">Mental Health Case Report</a>
-</div>
-
-<div class="article-card">
-    <a href="articles/JAMH-35-39.pdf">Article 4</a>
-</div>
-
-<div class="article-card">
-    <a href="articles/JAMH-40-54.pdf">Article 5</a>
-</div>
-
-<div class="article-card">
-    <a href="articles/JAMH-55-63.pdf">Article 6</a>
-</div>
-
-<div class="article-card">
-    <a href="articles/JAMH-64-69.pdf">Article 7</a>
-</div>
-
-<div class="article-card">
-    <a href="articles/JAMH-70-77.pdf">Article 8</a>
-</div>
-
-</div>
-
-<!-- ✅ JOURNAL INFORMATION LINKS -->
-<h2 class="section-title">Journal Information</h2>
-
-<div class="article-card">
-    <a href="front.html">Journal Front Page</a>
-</div>
-
-<div class="article-card">
-    <a href="about.html">About the Journal</a>
-</div>
-
-<div class="article-card">
-    <a href="guidelines.html">Author Guidelines</a>
-</div>
-
-<div class="article-card">
-    <a href="submit.html">Submit Your Paper</a>
-</div>
-
-<div class="article-card">
-    <a href="archive.html">Archive / Past Issues</a>
-</div>
-
-<!-- ✅ FOOTER (NEW) -->
-<div class="footer">
-    <p><strong>Journal of Addiction and Mental Health (JAMH)</strong></p>
-    <p>Published by Society for Addiction Psychology, IHBAS, Delhi, India</p>
-
-    <div class="social-icons">
-        <a href="#">📘</a>
-        <a href="#">🐦</a>
-        <a href="#">📸</a>
-        <a href="#">💼</a>
+<main>
+  <section id="hero">
+    <div style="text-align: center; padding: 60px 0;">
+      <h2>Peer-Reviewed Quarterly Journal</h2>
+      <p>Focus: Substance Use Disorders · Mental Health · Behavioral Addictions</p>
+      <a class="submit-btn" href="submit.html">Submit Your Manuscript</a>
     </div>
+  </section>
 
-    <p style="margin-top:10px;">© 2025 JAMH. All rights reserved.</p>
-</div>
+  <section id="latest">
+    <h2>Latest Articles (Volume 1 Issue 1)</h2>
+    <div class="article-list">
+      <ul>
+        <li><a href="articles/Article1.pdf" target="_blank">“#WorkoutwithSocialMedia”: Ameliorating effects of social media on health-promoting behaviour among Adults</a></li>
+        <li><a href="articles/JAMH-2.pdf" target="_blank">From Experimentation to Dependency: Understanding the Development and Consequences of Addiction in Youth</a></li>
+        <li><a href="articles/JAMH-3.pdf" target="_blank">Addiction Policy and Advocacy: Youth Empowerment, Legislation Conversations</a></li>
+        <li><a href="articles/JAMH-35-39.pdf" target="_blank">Parent Training and Its Impact on Mobile Addiction Among Children with ADHD</a></li>
+        <li><a href="articles/JAMH-40-54.pdf" target="_blank">Perceived Social Support, Stigma and Mental Health of Female Sex Workers in Aizawl City</a></li>
+        <li><a href="articles/JAMH-55-63.pdf" target="_blank">Effect of Metacognitive Awareness and Learning Style Preference on Academic Achievement of College Students</a></li>
+        <li><a href="articles/JAMH-64-69.pdf" target="_blank">Happiness and Gratitude as Predictors of Life Satisfaction</a></li>
+        <li><a href="articles/JAMH-70-77.pdf" target="_blank">Clinical Challenges in Juvenile De-Addiction: A Case Study</a></li>
+      </ul>
+    </div>
+  </section>
 
-<!-- ✅ SEARCH FUNCTION -->
-<script>
-function searchArticles() {
-    let input = document.getElementById('searchInput').value.toLowerCase();
-    let articles = document.querySelectorAll('#articleList .article-card');
+  <section id="about">
+    <h2>About the Journal</h2>
+    <p>The Journal of Addiction & Mental Health (JAMH) is the official journal of the Society for Addiction Psychology (SAP). It publishes peer-reviewed research in the field of substance use, mental health, and behavioral addictions.</p>
+  </section>
+</main>
 
-    articles.forEach(function(card) {
-        let text = card.innerText.toLowerCase();
-        card.style.display = text.includes(input) ? 'block' : 'none';
-    });
-}
-</script>
+<footer>
+  <p>© 2025 Journal of Addiction & Mental Health</p>
+</footer>
 
 </body>
 </html>
