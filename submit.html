@@ -1,171 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Submit Your Paper – JAMH</title>
-<link rel="stylesheet" href="assets/style.css">
-
-<style>
-/* ——— Layout ——— */
-.submission-guidelines {
-    background: #eaf3ff;
-    border-left: 6px solid #4da3ff;
-    padding: 18px;
-    margin-bottom: 25px;
-    border-radius: 6px;
-}
-
-form {
-    background: #ffffff;
-    padding: 25px;
-    border-radius: 10px;
-    border: 1px solid #bcd7ff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-
-/* ——— Inputs ——— */
-label {
-    font-weight: bold;
-    color: #003366;
-}
-input, select, textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 6px;
-    margin-bottom: 15px;
-    border: 1px solid #aac8ff;
-    border-radius: 6px;
-    font-size: 16px;
-}
-textarea {
-    height: 120px;
-}
-
-/* ——— Button ——— */
-button {
-    background: #4da3ff;
-    padding: 12px 20px;
-    border: none;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 6px;
-    cursor: pointer;
-    width: 100%;
-}
-button:hover {
-    background: #2e8cef;
-}
-
-/* Checklist */
-.checklist-box {
-    background: #f4f9ff;
-    padding: 12px;
-    border-radius: 6px;
-    border: 1px solid #cfe2ff;
-    margin-bottom: 20px;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit Manuscript – JAMH</title>
+  <link rel="stylesheet" href="assets/style.css">
 </head>
-
 <body>
+<header>
+  <h1>Submit Your Manuscript – JAMH</h1>
+  <nav><a href="index.html">Home</a></nav>
+</header>
 
-<h1>Submit Your Manuscript</h1>
-
-<!-- ——— Submission Guidelines Box ——— -->
-<div class="submission-guidelines">
-    <h2>Submission Guidelines</h2>
-    <ul>
-        <li>Upload manuscript in <strong>PDF or DOCX</strong>.</li>
-        <li>Use <strong>APA</strong> style for references.</li>
-        <li>Include <strong>Title page with author details</strong>.</li>
-        <li>Abstract should be <strong>150–250 words</strong>.</li>
-        <li>Font: <strong>Times New Roman, 12pt, 1.5 spacing</strong>.</li>
-        <li>Plagiarism must be <strong>below 10%</strong>.</li>
-        <li>Attach <strong>Cover Letter</strong> (optional).</li>
-        <li>Upload <strong>Ethics approval</strong> (if applicable).</li>
-    </ul>
-</div>
-
-<!-- ——— Form ——— -->
-<form action="https://formsubmit.co/jamheditor@gmail.com" 
-      method="POST" enctype="multipart/form-data">
-
-    <!-- Disable CAPTCHA -->
-    <input type="hidden" name="_captcha" value="false">
-
-    <!-- Redirect to success page -->
-    <input type="hidden" name="_next" value="https://jamh.in/thankyou.html">
-
-    <!-- Auto-response email -->
-    <input type="hidden" name="_autoresponse" 
-           value="Thank you for submitting your paper to JAMH. You will receive a response within 3–5 working days.">
-
-    <!-- Subject line -->
+<main>
+  <h2>Submission Form</h2>
+  <form action="https://formsubmit.co/jamheditor@gmail.com" method="POST" enctype="multipart/form-data">
+    <label>Author Name</label><br>
+    <input type="text" name="name" required><br><br>
+    <label>Email</label><br>
+    <input type="email" name="email" required><br><br>
+    <label>Manuscript (.docx)</label><br>
+    <input type="file" name="manuscript" accept=".docx" required><br><br>
     <input type="hidden" name="_subject" value="New Manuscript Submission – JAMH">
+    <button type="submit" class="submit-btn">Submit</button>
+  </form>
 
-    <!-- Anti-spam honeypot -->
-    <input type="text" name="_honey" style="display:none">
+  <h2>Author Guidelines</h2>
+  <p>• The manuscript should be in APA 7th Edition style.</p>
+  <p>• File format: .docx; include plagiarism report (.pdf).</p>
+  <p>• Word limit: 6000 words maximum.</p>
+  <p>• Figures, tables should be cited and numbered.</p>
+  <p>• Cover letter should explain significance, novelty, and compliance with ethics.</p>
+</main>
 
-    <!-- MULTI-EDITOR routing (optional) -->
-    <input type="hidden" name="_cc" value="naveen@example.com,associateeditor@example.com">
-
-    <!-- ——— Personal Details ——— -->
-    <label>Author Name</label>
-    <input type="text" name="Author Name" required>
-
-    <label>Email</label>
-    <input type="email" name="Email" required>
-
-    <label>ORCID (optional)</label>
-    <input type="text" name="ORCID" placeholder="0000-0000-0000-0000">
-
-    <!-- ——— Manuscript Details ——— -->
-    <label>Title of Manuscript</label>
-    <input type="text" name="Title" required>
-
-    <label>Article Type</label>
-    <select name="Article Type" required>
-        <option>Review Article</option>
-        <option>Original Article</option>
-        <option>Case Study</option>
-        <option>Short Communication</option>
-    </select>
-
-    <!-- ——— File Uploads ——— -->
-    <label>Upload Manuscript (PDF or DOCX, max 25 MB)</label>
-    <input type="file" name="Manuscript" accept=".pdf,.doc,.docx" required>
-
-    <label>Cover Letter (optional)</label>
-    <input type="file" name="Cover Letter" accept=".pdf,.doc,.docx">
-
-    <label>Ethics Approval (optional)</label>
-    <input type="file" name="Ethics Approval" accept=".pdf,.doc,.docx">
-
-    <label>Tables / Figures (optional)</label>
-    <input type="file" name="Figures" accept=".pdf,.png,.jpg,.jpeg" multiple>
-
-    <!-- ——— Checklist ——— -->
-    <div class="checklist-box">
-        <strong>Author Checklist:</strong><br><br>
-        <label><input type="checkbox" required> Manuscript is original and not under review elsewhere.</label><br>
-        <label><input type="checkbox" required> All authors have approved the submission.</label><br>
-        <label><input type="checkbox" required> Conflict of Interest statement is included.</label><br>
-        <label><input type="checkbox" required> Ethics approval is included (if human subjects involved).</label>
-    </div>
-
-    <!-- ——— COI & E-Signature ——— -->
-    <label>Conflict of Interest Declaration</label>
-    <textarea name="Conflict of Interest" placeholder="State if any financial or personal conflict exists…" required></textarea>
-
-    <label>E-Signature (type your full name)</label>
-    <input type="text" name="E-Signature" required>
-
-    <!-- ——— Submit Button ——— -->
-    <button type="submit">Submit Paper</button>
-
-</form>
+<footer>
+  <p>© 2025 Journal of Addiction & Mental Health</p>
+</footer>
 
 </body>
 </html>
