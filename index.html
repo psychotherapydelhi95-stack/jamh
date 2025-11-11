@@ -26,7 +26,7 @@
     color: #4da3ff;
 }
 
-/* HERO BANNER */
+/* HERO */
 .hero {
     margin-top: 25px;
     padding: 40px;
@@ -34,17 +34,18 @@
     color: white;
     text-align: center;
     border-radius: 10px;
-    animation: fadeIn 1.2s ease;
+    animation: fadeIn 1s ease;
 }
 .hero h1 {
-    font-size: 38px;
-    margin-bottom: 10px;
+    font-size: 40px;
+    font-weight: bold;
 }
 .hero p {
     font-size: 18px;
+    margin-top: 8px;
 }
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-8px); }
+    from { opacity: 0; transform: translateY(-10px); }
     to   { opacity: 1; transform: translateY(0); }
 }
 
@@ -55,14 +56,14 @@
 }
 .search-box input {
     width: 90%;
-    max-width: 500px;
+    max-width: 550px;
     padding: 12px;
     border-radius: 8px;
     border: 1px solid #aac8ff;
     font-size: 16px;
 }
 
-/* ISSUE INFO BOX */
+/* ISSUE INFO */
 .issue-info {
     background: white;
     padding: 25px;
@@ -70,6 +71,9 @@
     border-radius: 10px;
     margin: 25px 0;
     text-align: center;
+}
+.issue-info h2 {
+    margin-bottom: 5px;
 }
 
 /* ARTICLE CARDS */
@@ -91,9 +95,9 @@
     color: #0066cc;
 }
 
-/* SECTION HEADER */
+/* HEADERS */
 .section-title {
-    font-size: 26px;
+    font-size: 28px;
     margin-top: 40px;
     color: #003366;
     border-left: 6px solid #4da3ff;
@@ -102,12 +106,12 @@
 
 /* FOOTER */
 .footer {
-    margin-top: 40px;
+    margin-top: 50px;
     background: #003366;
     color: white;
-    padding: 25px;
+    padding: 28px;
     text-align: center;
-    border-radius: 8px;
+    border-radius: 10px;
 }
 
 .social-icons a {
@@ -125,33 +129,34 @@
 
 <body>
 
-<!-- ✅ NAVBAR -->
+<!-- ✅ NAVIGATION BAR -->
 <div class="navbar">
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="guidelines.html">Author Guidelines</a>
     <a href="submit.html">Submit Paper</a>
+    <a href="archive.html">Archive</a>
 </div>
 
-<!-- ✅ HERO BANNER -->
+<!-- ✅ HERO BANNER (NEW) -->
 <div class="hero">
-    <h1>Journal of Addiction and Mental Health</h1>
-    <p>Advancing research, practice, and policy in addiction and mental health.</p>
+    <h1>Journal of Addiction and Mental Health (JAMH)</h1>
+    <p>Advancing research, clinical practice, and policy in addiction and mental health.</p>
 </div>
 
-<!-- ✅ SEARCH BAR -->
+<!-- ✅ SEARCH BAR (NEW) -->
 <div class="search-box">
     <input type="text" id="searchInput" placeholder="Search articles..." onkeyup="searchArticles()">
 </div>
 
-<!-- ✅ ISSUE INFO -->
+<!-- ✅ ISSUE DETAILS -->
 <div class="issue-info">
     <h2>Current Issue</h2>
-    <p>Volume 1 • Issue 1 • July–September 2025</p>
-    <p><strong>ISSN:</strong> 3107-8398</p>
+    <p><strong>Volume 1 • Issue 1 • July–September 2025</strong></p>
+    <p>ISSN: <strong>3107-8398</strong></p>
 </div>
 
-<!-- ✅ ARTICLE LIST -->
+<!-- ✅ ARTICLE LIST (OLD + NEW MIX) -->
 <h2 class="section-title">Articles</h2>
 
 <div id="articleList">
@@ -190,7 +195,7 @@
 
 </div>
 
-<!-- ✅ JOURNAL LINKS -->
+<!-- ✅ JOURNAL INFORMATION LINKS -->
 <h2 class="section-title">Journal Information</h2>
 
 <div class="article-card">
@@ -213,16 +218,16 @@
     <a href="archive.html">Archive / Past Issues</a>
 </div>
 
-<!-- ✅ FOOTER -->
+<!-- ✅ FOOTER (NEW) -->
 <div class="footer">
     <p><strong>Journal of Addiction and Mental Health (JAMH)</strong></p>
     <p>Published by Society for Addiction Psychology, IHBAS, Delhi, India</p>
 
     <div class="social-icons">
-        <a href="#" title="Facebook">📘</a>
-        <a href="#" title="Twitter">🐦</a>
-        <a href="#" title="Instagram">📸</a>
-        <a href="#" title="LinkedIn">💼</a>
+        <a href="#">📘</a>
+        <a href="#">🐦</a>
+        <a href="#">📸</a>
+        <a href="#">💼</a>
     </div>
 
     <p style="margin-top:10px;">© 2025 JAMH. All rights reserved.</p>
