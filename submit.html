@@ -3,71 +3,143 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Submit Paper | Journal of Addiction and Mental Health</title>
+  <title>Paper Submission | Journal of Addiction and Mental Health</title>
   <link rel="stylesheet" href="assets/style.css" />
-
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
   <style>
-    body { background:#f4f7fb; }
+    body {
+      background-color: #f4f7fb;
+    }
+
     .submission-container {
-      max-width:700px; margin:60px auto; background:#fff;
-      padding:40px; border-radius:10px; box-shadow:0 3px 10px rgba(0,0,0,0.1);
+      max-width: 700px;
+      margin: 60px auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     }
-    label { font-weight:600; }
+
+    h2 {
+      text-align: center;
+      color: #004080;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: 600;
+      color: #222;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    input[type="file"] {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
     button {
-      background:#004080; color:white; padding:12px;
-      border:none; border-radius:6px; cursor:pointer;
+      background: #004080;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: background 0.3s;
     }
-    button:hover { background:#003366; }
+
+    button:hover {
+      background: #002d66;
+    }
+
+    .note {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .success-message {
+      text-align: center;
+      background: #e6f9ed;
+      color: #167b35;
+      padding: 15px;
+      border-radius: 6px;
+      display: none;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
+  <header>
+    <h1>Journal of Addiction and Mental Health</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="submission.html" style="color: #ffd700;">Submit Paper</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<header>
-  <h1>Journal of Addiction and Mental Health</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="submission.html" style="color:#ffd700;">Submit Paper</a>
-  </nav>
-</header>
+  <div class="submission-container">
+    <h2>Manuscript Submission Form</h2>
+    <p style="text-align:center; color:#333;">
+      Please fill in the details below and upload your manuscript.<br>
+      Ensure it follows <strong>APA 7th Edition</strong> and includes a plagiarism report.
+    </p>
 
-<div class="submission-container">
-  <h2>Manuscript Submission</h2>
+    <!-- Replace the action URL below with your own Formspree link -->
+    <form id="submissionForm" action="https://formspree.io/f/xqawgbwn" method="POST" enctype="multipart/form-data">
+      <label for="name">Author Name:</label>
+      <input type="text" id="name" name="Author Name" required />
 
-  <form id="submissionForm"
-        action="https://formspree.io/f/xqawgbwn"
-        method="POST"
-        enctype="multipart/form-data">
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="Email" required />
 
-    <label>Author Name</label>
-    <input type="text" name="Author" required>
+      <label for="affiliation">Affiliation:</label>
+      <input type="text" id="affiliation" name="Affiliation" required />
 
-    <label>Email</label>
-    <input type="email" name="Email" required>
+      <label for="title">Paper Title:</label>
+      <input type="text" id="title" name="Title" required />
 
-    <label>Affiliation</label>
-    <input type="text" name="Affiliation" required>
+      <label for="abstract">Abstract:</label>
+      <textarea id="abstract" name="Abstract" required></textarea>
 
-    <label>Paper Title</label>
-    <input type="text" name="Title" required>
+      <label for="file">Upload Manuscript (.docx or .pdf):</label>
+      <input type="file" id="file" name="Manuscript" accept=".doc,.docx,.pdf" required />
 
-    <label>Abstract</label>
-    <textarea name="Abstract" required></textarea>
-
-    <label>Upload Manuscript (.docx/.pdf, max 10MB)</label>
-    <input type="file" id="fileUpload" name="Manuscript" accept=".doc,.docx,.pdf" required>
-
-    <!-- GOOGLE RECAPTCHA -->
-    <div class="g-recaptcha" data-sitekey="6LeUqA4sAAAAAOSafXBLDIfNdhzQFM5O5toL_gAB"></div>
+      <!-- GOOGLE RECAPTCHA -->
+    <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
     <br>
+      <button type="submit">Submit Paper</button>
 
-    <button type="submit">Submit Manuscript</button>
+      <div class="success-message" id="successMessage">
+        ✅ Thank you! Your paper has been submitted successfully.
+      </div>
 
-  </form>
-</div>
+      <p class="note">For any issues, contact <strong>jamheditor@gmail.com</strong></p>
+    </form>
+  </div>
 
-<script>
+  <footer>
+    <p>© 2025 Journal of Addiction and Mental Health — Society for Addiction Psychology</p>
+  </footer>
+
+  <script>
   // === FILE SIZE LIMIT (10 MB) ===
   document.getElementById("fileUpload").addEventListener("change", function () {
     const file = this.files[0];
@@ -96,6 +168,5 @@
     }
   });
 </script>
-
 </body>
 </html>
