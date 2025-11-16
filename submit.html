@@ -1,184 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Submit Your Paper – JAMH</title>
-<link rel="stylesheet" href="assets/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paper Submission | Journal of Addiction and Mental Health</title>
+  <link rel="stylesheet" href="assets/style.css" />
+  <style>
+    body {
+      background-color: #f4f7fb;
+    }
 
-<style>.back-home {
-    display: inline-block;
-    margin-top: 25px;
-    font-size: 18px;
-    color: #004d80;
-    text-decoration: none;
-    font-weight: bold;
-}
-.back-home:hover {
-    text-decoration: underline;
-    color: #0066cc;
-}
+    .submission-container {
+      max-width: 700px;
+      margin: 60px auto;
+      background: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
 
-/* ——— Layout ——— */
-.submission-guidelines {
-    background: #eaf3ff;
-    border-left: 6px solid #4da3ff;
-    padding: 18px;
-    margin-bottom: 25px;
-    border-radius: 6px;
-}
+    h2 {
+      text-align: center;
+      color: #004080;
+      margin-bottom: 20px;
+    }
 
-form {
-    background: #ffffff;
-    padding: 25px;
-    border-radius: 10px;
-    border: 1px solid #bcd7ff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
 
-/* ——— Inputs ——— */
-label {
-    font-weight: bold;
-    color: #003366;
-}
-input, select, textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 6px;
-    margin-bottom: 15px;
-    border: 1px solid #aac8ff;
-    border-radius: 6px;
-    font-size: 16px;
-}
-textarea {
-    height: 120px;
-}
+    label {
+      font-weight: 600;
+      color: #222;
+    }
 
-/* ——— Button ——— */
-button {
-    background: #4da3ff;
-    padding: 12px 20px;
-    border: none;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 6px;
-    cursor: pointer;
-    width: 100%;
-}
-button:hover {
-    background: #2e8cef;
-}
+    input[type="text"],
+    input[type="email"],
+    textarea,
+    input[type="file"] {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
 
-/* Checklist */
-.checklist-box {
-    background: #f4f9ff;
-    padding: 12px;
-    border-radius: 6px;
-    border: 1px solid #cfe2ff;
-    margin-bottom: 20px;
-}
-</style>
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    button {
+      background: #004080;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #002d66;
+    }
+
+    .note {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .success-message {
+      text-align: center;
+      background: #e6f9ed;
+      color: #167b35;
+      padding: 15px;
+      border-radius: 6px;
+      display: none;
+      margin-top: 10px;
+    }
+  </style>
 </head>
-
 <body>
+  <header>
+    <h1>Journal of Addiction and Mental Health</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="submission.html" style="color: #ffd700;">Submit Paper</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<h1>Submit Your Manuscript</h1>
+  <div class="submission-container">
+    <h2>Manuscript Submission Form</h2>
+    <p style="text-align:center; color:#333;">
+      Please fill in the details below and upload your manuscript.<br>
+      Ensure it follows <strong>APA 7th Edition</strong> and includes a plagiarism report.
+    </p>
 
-<!-- ——— Submission Guidelines Box ——— -->
-<div class="submission-guidelines">
-    <h2>Submission Guidelines</h2>
-    <ul>
-        <li>Upload manuscript in <strong>PDF or DOCX</strong>.</li>
-        <li>Use <strong>APA</strong> style for references.</li>
-        <li>Include <strong>Title page with author details</strong>.</li>
-        <li>Abstract should be <strong>150–250 words</strong>.</li>
-        <li>Font: <strong>Times New Roman, 12pt, 1.5 spacing</strong>.</li>
-        <li>Plagiarism must be <strong>below 10%</strong>.</li>
-        <li>Attach <strong>Cover Letter</strong> (optional).</li>
-        <li>Upload <strong>Ethics approval</strong> (if applicable).</li>
-    </ul>
-</div>
+    <!-- Replace the action URL below with your own Formspree link -->
+    <form id="submissionForm" action="https://formspree.io/f/your-form-id" method="POST" enctype="multipart/form-data">
+      <label for="name">Author Name:</label>
+      <input type="text" id="name" name="Author Name" required />
 
-<!-- ——— Form ——— -->
-<form action="https://formsubmit.co/jamheditor@gmail.com" 
-      method="POST" enctype="multipart/form-data">
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="Email" required />
 
-    <!-- Disable CAPTCHA -->
-    <input type="hidden" name="_captcha" value="false">
+      <label for="affiliation">Affiliation:</label>
+      <input type="text" id="affiliation" name="Affiliation" required />
 
-    <!-- Redirect to success page -->
-    <input type="hidden" name="_next" value="https://jamh.in/thankyou.html">
+      <label for="title">Paper Title:</label>
+      <input type="text" id="title" name="Title" required />
 
-    <!-- Auto-response email -->
-    <input type="hidden" name="_autoresponse" 
-           value="Thank you for submitting your paper to JAMH. You will receive a response within 3–5 working days.">
+      <label for="abstract">Abstract:</label>
+      <textarea id="abstract" name="Abstract" required></textarea>
 
-    <!-- Subject line -->
-    <input type="hidden" name="_subject" value="New Manuscript Submission – JAMH">
+      <label for="file">Upload Manuscript (.docx or .pdf):</label>
+      <input type="file" id="file" name="Manuscript" accept=".doc,.docx,.pdf" required />
 
-    <!-- Anti-spam honeypot -->
-    <input type="text" name="_honey" style="display:none">
+      <button type="submit">Submit Paper</button>
 
-    <!-- MULTI-EDITOR routing (optional) -->
-    <input type="hidden" name="_cc" value="naveen@example.com,associateeditor@example.com">
+      <div class="success-message" id="successMessage">
+        ✅ Thank you! Your paper has been submitted successfully.
+      </div>
 
-    <!-- ——— Personal Details ——— -->
-    <label>Author Name</label>
-    <input type="text" name="Author Name" required>
+      <p class="note">For any issues, contact <strong>jamheditor@gmail.com</strong></p>
+    </form>
+  </div>
 
-    <label>Email</label>
-    <input type="email" name="Email" required>
+  <footer>
+    <p>© 2025 Journal of Addiction and Mental Health — Society for Addiction Psychology</p>
+  </footer>
 
-    <label>ORCID (optional)</label>
-    <input type="text" name="ORCID" placeholder="0000-0000-0000-0000">
+  <script>
+    // Optional: Show success message after submission
+    const form = document.getElementById('submissionForm');
+    const successMessage = document.getElementById('successMessage');
 
-    <!-- ——— Manuscript Details ——— -->
-    <label>Title of Manuscript</label>
-    <input type="text" name="Title" required>
-
-    <label>Article Type</label>
-    <select name="Article Type" required>
-        <option>Review Article</option>
-        <option>Original Article</option>
-        <option>Case Study</option>
-        <option>Short Communication</option>
-    </select>
-
-    <!-- ——— File Uploads ——— -->
-    <label>Upload Manuscript (PDF or DOCX, max 25 MB)</label>
-    <input type="file" name="Manuscript" accept=".pdf,.doc,.docx" required>
-
-    <label>Cover Letter (optional)</label>
-    <input type="file" name="Cover Letter" accept=".pdf,.doc,.docx">
-
-    <label>Ethics Approval (optional)</label>
-    <input type="file" name="Ethics Approval" accept=".pdf,.doc,.docx">
-
-    <label>Tables / Figures (optional)</label>
-    <input type="file" name="Figures" accept=".pdf,.png,.jpg,.jpeg" multiple>
-
-    <!-- ——— Checklist ——— -->
-    <div class="checklist-box">
-        <strong>Author Checklist:</strong><br><br>
-        <label><input type="checkbox" required> Manuscript is original and not under review elsewhere.</label><br>
-        <label><input type="checkbox" required> All authors have approved the submission.</label><br>
-        <label><input type="checkbox" required> Conflict of Interest statement is included.</label><br>
-        <label><input type="checkbox" required> Ethics approval is included (if human subjects involved).</label>
-    </div>
-
-    <!-- ——— COI & E-Signature ——— -->
-    <label>Conflict of Interest Declaration</label>
-    <textarea name="Conflict of Interest" placeholder="State if any financial or personal conflict exists…" required></textarea>
-
-    <label>E-Signature (type your full name)</label>
-    <input type="text" name="E-Signature" required>
-
-    <!-- ——— Submit Button ——— -->
-    <button type="submit">Submit Paper</button>
-
-</form>
-<!-- RETURN TO HOME -->
-<a href="index.html" class="back-home">← Return to Home</a>
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          successMessage.style.display = 'block';
+          form.reset();
+        } else {
+          alert('Submission failed. Please try again later.');
+        }
+      }).catch(() => {
+        alert('Connection error. Please check your internet or try again later.');
+      });
+    });
+  </script>
 </body>
 </html>
