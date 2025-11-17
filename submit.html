@@ -3,41 +3,60 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Paper Submission | Journal of Addiction and Mental Health</title>
+  <title>Submit Manuscript | Journal of Addiction and Mental Health</title>
   <link rel="stylesheet" href="assets/style.css" />
 
   <style>
     body {
-      background-color: #f4f7fb;
+      background: #f4f7fb;
     }
 
-    .submission-container {
-      max-width: 900px;
-      margin: 40px auto;
+    .container {
+      max-width: 750px;
+      margin: 60px auto;
       background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
     }
 
     h2 {
-      color: #004080;
       text-align: center;
-      margin-bottom: 20px;
+      color: #004080;
+      margin-bottom: 10px;
+    }
+
+    p {
+      text-align: center;
+      color: #333;
+      font-size: 1rem;
+      margin-bottom: 25px;
+    }
+
+    .submit-btn {
+      display: block;
+      width: 100%;
+      background: #004080;
+      color: #fff;
+      padding: 15px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: center;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .submit-btn:hover {
+      background: #002d66;
     }
 
     .note {
+      margin-top: 20px;
       text-align: center;
-      font-size: 0.9rem;
-      color: #444;
-      margin-top: 10px;
-    }
-
-    iframe {
-      width: 100%;
-      border: none;
-      height: 1400px; /* Increase if Google Form is long */
-      border-radius: 6px;
+      font-size: 0.95rem;
+      color: #555;
     }
   </style>
 </head>
@@ -48,31 +67,25 @@
   <h1>Journal of Addiction and Mental Health</h1>
   <nav>
     <a href="index.html">Home</a>
-    <a href="submission.html" style="color: #ffd700;">Submit Paper</a>
-    <a href="#contact">Contact</a>
+    <a href="submission.html" style="color:#ffd700;">Submit Paper</a>
   </nav>
 </header>
 
-<div class="submission-container">
-  <h2>Submit Your Manuscript</h2>
-  <p style="text-align:center; font-size:1rem;">
-    Upload your manuscript, cover letter, and plagiarism report below using the official JAMH submission form.
+<div class="container">
+  <h2>Manuscript Submission</h2>
+  <p>
+    Please submit your manuscript using the secure Google Form.<br>
+    File uploads are fully supported (.docx, .pdf, plagiarism report).
   </p>
 
-  <!-- ⭐⭐ EMBED YOUR GOOGLE FORM HERE ⭐⭐ -->
-  
-  <!-- Replace ONLY the src="" link with your own Google Form embed link -->
-  <iframe 
-    src="https://docs.google.com/forms/d/e/1FAIpQLSdpnwyKS45a2MlZS4ZN8XzLVSbfHw1JJOzmo2pN0Il8hAZEdw/viewform?usp=header"
-    frameborder="0"
-    marginheight="0"
-    marginwidth="0">
-    Loading…
-  </iframe>
+  <!-- ★★ IMPORTANT: Replace the link below with your Google Form Link ★★ -->
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSdpnwyKS45a2MlZS4ZN8XzLVSbfHw1JJOzmo2pN0Il8hAZEdw/viewform?usp=header" target="_blank" class="submit-btn">
+    Open Submission Form
+  </a>
 
   <p class="note">
-    If you face issues submitting, please email us at  
-    <strong>jamheditor@gmail.com</strong>
+    You will be redirected to Google Forms where you can upload your files.<br>
+    For queries email us at <strong>jamheditor@gmail.com</strong>
   </p>
 </div>
 
