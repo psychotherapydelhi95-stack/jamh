@@ -3,20 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Paper Submission | Journal of Addiction and Mental Health</title>
+  <title>Submit Your Paper | Journal of Addiction and Mental Health</title>
   <link rel="stylesheet" href="assets/style.css" />
+
   <style>
     body {
-      background-color: #f4f7fb;
+      background: #f4f7fb;
     }
 
-    .submission-container {
-      max-width: 700px;
-      margin: 60px auto;
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
       background: #fff;
-      padding: 40px;
+      padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
     h2 {
@@ -25,67 +26,16 @@
       margin-bottom: 20px;
     }
 
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    label {
-      font-weight: 600;
-      color: #222;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    textarea,
-    input[type="file"] {
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 1rem;
-    }
-
-    textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
-
-    button {
-      background: #004080;
-      color: white;
+    iframe {
+      width: 100%;
+      height: 1100px; /* Adjust based on your form length */
       border: none;
-      padding: 12px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-      font-size: 1rem;
-      transition: background 0.3s;
-    }
-
-    button:hover {
-      background: #002d66;
-    }
-
-    .note {
-      font-size: 0.9rem;
-      color: #666;
-      margin-top: 10px;
-      text-align: center;
-    }
-
-    .success-message {
-      text-align: center;
-      background: #e6f9ed;
-      color: #167b35;
-      padding: 15px;
-      border-radius: 6px;
-      display: none;
-      margin-top: 10px;
     }
   </style>
 </head>
+
 <body>
+
   <header>
     <h1>Journal of Addiction and Mental Health</h1>
     <nav>
@@ -95,40 +45,25 @@
     </nav>
   </header>
 
-  <div class="submission-container">
+  <div class="container">
     <h2>Manuscript Submission Form</h2>
-    <p style="text-align:center; color:#333;">
-      Please fill in the details below and upload your manuscript.<br>
-      Ensure it follows <strong>APA 7th Edition</strong> and includes a plagiarism report.
+    <p style="text-align:center;">
+      Please complete the form below and upload your manuscript file (DOCX or PDF) 
+      along with your plagiarism report.
     </p>
 
-    <div class="submission-container">
-  <h2>Manuscript Submission Form</h2>
+    <!-- ===== EMBED GOOGLE FORM HERE ===== -->
+    <iframe 
+      src="https://forms.gle/sqLygfEdY3xdZY7i8"
+      allowfullscreen>
+    </iframe>
+    <!-- ===================================== -->
 
-  <iframe 
-      src="https://forms.gle/wtsy89NcSbPi6FTZA" 
-      width="100%" 
-      height="1200" 
-      frameborder="0" 
-      marginheight="0" 
-      marginwidth="0">
-      Loading…
-  </iframe>
-</div>
-
-
-      <div class="success-message" id="successMessage">
-        ✅ Thank you! Your paper has been submitted successfully.
-      </div>
-
-      <p class="note">For any issues, contact <strong>jamheditor@gmail.com</strong></p>
-    </form>
   </div>
 
   <footer>
     <p>© 2025 Journal of Addiction and Mental Health — Society for Addiction Psychology</p>
   </footer>
 
-  
 </body>
 </html>
