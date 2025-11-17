@@ -102,28 +102,20 @@
       Ensure it follows <strong>APA 7th Edition</strong> and includes a plagiarism report.
     </p>
 
-    <!-- Replace the action URL below with your own Formspree link -->
-    <form id="submissionForm" action="https://formspree.io/f/xqawgbwn" method="POST" enctype="multipart/form-data">
-      <label for="name">Author Name:</label>
-      <input type="text" id="name" name="Author Name" required />
+    <div class="submission-container">
+  <h2>Manuscript Submission Form</h2>
 
-      <label for="email">Email Address:</label>
-      <input type="email" id="email" name="Email" required />
+  <iframe 
+      src="YOUR_GOOGLE_FORM_LINK?embedded=true" 
+      width="100%" 
+      height="1200" 
+      frameborder="0" 
+      marginheight="0" 
+      marginwidth="0">
+      Loading…
+  </iframe>
+</div>
 
-      <label for="affiliation">Affiliation:</label>
-      <input type="text" id="affiliation" name="Affiliation" required />
-
-      <label for="title">Paper Title:</label>
-      <input type="text" id="title" name="Title" required />
-
-      <label for="abstract">Abstract:</label>
-      <textarea id="abstract" name="Abstract" required></textarea>
-
-      <label for="file">Upload Manuscript (.docx or .pdf):</label>
-      <input type="file" id="file" name="Manuscript" accept=".doc,.docx,.pdf" required />
-      <p class="error" id="fileError">❗ File must be under 5 MB.</p>
-      <!-- Hidden input for reCAPTCHA -->
-    <input type="hidden" name="g-recaptcha-response" id="recaptchaToken">
       
       <button type="submit">Submit Paper</button>
 
