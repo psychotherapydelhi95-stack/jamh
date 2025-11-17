@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Submit Your Paper | Journal of Addiction and Mental Health</title>
+  <title>Paper Submission | Journal of Addiction and Mental Health</title>
   <link rel="stylesheet" href="assets/style.css" />
 
   <style>
     body {
-      background: #f4f7fb;
+      background-color: #f4f7fb;
     }
 
-    .container {
+    .submission-container {
       max-width: 900px;
       margin: 40px auto;
       background: #fff;
@@ -21,49 +21,64 @@
     }
 
     h2 {
-      text-align: center;
       color: #004080;
+      text-align: center;
       margin-bottom: 20px;
+    }
+
+    .note {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #444;
+      margin-top: 10px;
     }
 
     iframe {
       width: 100%;
-      height: 1100px; /* Adjust based on your form length */
       border: none;
+      height: 1400px; /* Increase if Google Form is long */
+      border-radius: 6px;
     }
   </style>
 </head>
 
 <body>
 
-  <header>
-    <h1>Journal of Addiction and Mental Health</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="submission.html" style="color: #ffd700;">Submit Paper</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<header>
+  <h1>Journal of Addiction and Mental Health</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="submission.html" style="color: #ffd700;">Submit Paper</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
 
-  <div class="container">
-    <h2>Manuscript Submission Form</h2>
-    <p style="text-align:center;">
-      Please complete the form below and upload your manuscript file (DOCX or PDF) 
-      along with your plagiarism report.
-    </p>
+<div class="submission-container">
+  <h2>Submit Your Manuscript</h2>
+  <p style="text-align:center; font-size:1rem;">
+    Upload your manuscript, cover letter, and plagiarism report below using the official JAMH submission form.
+  </p>
 
-    <!-- ===== EMBED GOOGLE FORM HERE ===== -->
-    <iframe 
-      src="https://forms.gle/6LWx2K2B9LHebxhq6"
-      allowfullscreen>
-    </iframe>
-    <!-- ===================================== -->
+  <!-- ⭐⭐ EMBED YOUR GOOGLE FORM HERE ⭐⭐ -->
+  
+  <!-- Replace ONLY the src="" link with your own Google Form embed link -->
+  <iframe 
+    src="https://docs.google.com/forms/d/e/1FAIpQLSdpnwyKS45a2MlZS4ZN8XzLVSbfHw1JJOzmo2pN0Il8hAZEdw/viewform?usp=header"
+    frameborder="0"
+    marginheight="0"
+    marginwidth="0">
+    Loading…
+  </iframe>
 
-  </div>
+  <p class="note">
+    If you face issues submitting, please email us at  
+    <strong>jamheditor@gmail.com</strong>
+  </p>
+</div>
 
-  <footer>
-    <p>© 2025 Journal of Addiction and Mental Health — Society for Addiction Psychology</p>
-  </footer>
+<footer>
+  <p>© 2025 Journal of Addiction and Mental Health — Society for Addiction Psychology</p>
+</footer>
 
 </body>
 </html>
