@@ -154,7 +154,363 @@
   🔥 This JavaScript is READY for connecting to Google Apps Script File Upload API.
   When you're ready, paste your Apps Script URL into UPLOAD_URL.
 */
-const UPLOAD_URL = "PASTE_YOUR_GOOGLE_APPS_SCRIPT_ENDPOINT_HERE";
+const UPLOAD_URL = "<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submit Manuscript | Journal of Addiction and Mental Health</title>
+  <link rel="stylesheet" href="assets/style.css">
+
+  <style>
+    body {
+      background: #f4f7fb;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+    }
+
+    .submission-wrapper {
+      max-width: 850px;
+      margin: 60px auto;
+      padding: 40px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      color: #004080;
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 2rem;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      color: #002d66;
+      margin-bottom: 5px;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #cdd7e6;
+      background: #fdfdfd;
+      border-radius: 8px;
+      margin-bottom: 18px;
+      font-size: 1rem;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    input[type="file"] {
+      padding: 6px;
+      background: #ffffff;
+    }
+
+    .button-submit {
+      background: #004080;
+      color: white;
+      padding: 14px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      width: 100%;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .button-submit:hover {
+      background: #002d66;
+    }
+
+    .info-box {
+      background: #eaf3ff;
+      padding: 18px;
+      border-left: 5px solid #004080;
+      margin-bottom: 30px;
+      border-radius: 6px;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Journal of Addiction and Mental Health</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="submission.html" style="color:#ffd700;">Submit Paper</a>
+    <a href="track.html">Track Submission</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="submission-wrapper">
+
+  <h2>Manuscript Submission</h2>
+  <p class="subtitle">Please complete all fields and upload your manuscript (APA 7th, .docx/.pdf).</p>
+
+  <div class="info-box">
+    ✔ Your submission will generate an automatic confirmation email.<br>
+    ✔ Manuscript & plagiarism reports are securely stored in Google Drive.<br>
+    ✔ You will receive a Submission ID for tracking.
+  </div>
+
+  <!-- ✨ Custom Form Start -->
+  <form id="customSubmitForm">
+
+    <label>Author Full Name</label>
+    <input type="text" name="name" required>
+
+    <label>Email Address</label>
+    <input type="email" name="email" required>
+
+    <label>Affiliation</label>
+    <input type="text" name="affiliation" required>
+
+    <label>Manuscript Title</label>
+    <input type="text" name="title" required>
+
+    <label>Abstract (paste here)</label>
+    <textarea name="abstract" required></textarea>
+
+    <label>Upload Manuscript (.docx or .pdf)</label>
+    <input type="file" name="manuscript" accept=".doc,.docx,.pdf" required>
+
+    <label>Upload Plagiarism Report (.pdf)</label>
+    <input type="file" name="plagreport" accept=".pdf" required>
+
+    <button class="button-submit" type="submit">Submit Paper</button>
+
+  </form>
+  <!-- ✨ Custom Form End -->
+
+</div>
+
+<footer>
+  <p>© 2025 Journal of Addiction and Mental Health — Society for Addiction Psychology</p>
+</footer>
+
+
+<script>
+/*
+  🔥 This JavaScript is READY for connecting to Google Apps Script File Upload API.
+  When you're ready, paste your Apps Script URL into UPLOAD_URL.
+*/
+const UPLOAD_URL = "<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submit Manuscript | Journal of Addiction and Mental Health</title>
+  <link rel="stylesheet" href="assets/style.css">
+
+  <style>
+    body {
+      background: #f4f7fb;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+    }
+
+    .submission-wrapper {
+      max-width: 850px;
+      margin: 60px auto;
+      padding: 40px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      color: #004080;
+      text-align: center;
+      margin-bottom: 10px;
+      font-size: 2rem;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      color: #002d66;
+      margin-bottom: 5px;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #cdd7e6;
+      background: #fdfdfd;
+      border-radius: 8px;
+      margin-bottom: 18px;
+      font-size: 1rem;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    input[type="file"] {
+      padding: 6px;
+      background: #ffffff;
+    }
+
+    .button-submit {
+      background: #004080;
+      color: white;
+      padding: 14px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      width: 100%;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .button-submit:hover {
+      background: #002d66;
+    }
+
+    .info-box {
+      background: #eaf3ff;
+      padding: 18px;
+      border-left: 5px solid #004080;
+      margin-bottom: 30px;
+      border-radius: 6px;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Journal of Addiction and Mental Health</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="submission.html" style="color:#ffd700;">Submit Paper</a>
+    <a href="track.html">Track Submission</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="submission-wrapper">
+
+  <h2>Manuscript Submission</h2>
+  <p class="subtitle">Please complete all fields and upload your manuscript (APA 7th, .docx/.pdf).</p>
+
+  <div class="info-box">
+    ✔ Your submission will generate an automatic confirmation email.<br>
+    ✔ Manuscript & plagiarism reports are securely stored in Google Drive.<br>
+    ✔ You will receive a Submission ID for tracking.
+  </div>
+
+  <!-- ✨ Custom Form Start -->
+  <form id="customSubmitForm">
+
+    <label>Author Full Name</label>
+    <input type="text" name="name" required>
+
+    <label>Email Address</label>
+    <input type="email" name="email" required>
+
+    <label>Affiliation</label>
+    <input type="text" name="affiliation" required>
+
+    <label>Manuscript Title</label>
+    <input type="text" name="title" required>
+
+    <label>Abstract (paste here)</label>
+    <textarea name="abstract" required></textarea>
+
+    <label>Upload Manuscript (.docx or .pdf)</label>
+    <input type="file" name="manuscript" accept=".doc,.docx,.pdf" required>
+
+    <label>Upload Plagiarism Report (.pdf)</label>
+    <input type="file" name="plagreport" accept=".pdf" required>
+
+    <button class="button-submit" type="submit">Submit Paper</button>
+
+  </form>
+  <!-- ✨ Custom Form End -->
+
+</div>
+
+<footer>
+  <p>© 2025 Journal of Addiction and Mental Health — Society for Addiction Psychology</p>
+</footer>
+
+
+<script>
+/*
+  🔥 This JavaScript is READY for connecting to Google Apps Script File Upload API.
+  When you're ready, paste your Apps Script URL into UPLOAD_URL.
+*/
+const UPLOAD_URL = "https://script.google.com/macros/s/AKfycbw54OIEin-v1BPMg1wozMkhngdtBJ1FT7XC7h-XIIktZb6Gl3kLemlCJido_wbWuZY/exec";
+
+document.getElementById("customSubmitForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const form = new FormData(this);
+
+    const response = await fetch(UPLOAD_URL, {
+      method: "POST",
+      body: form
+    });
+
+    if (response.ok) {
+      window.location.href = "submission_success.html";
+    } else {
+      alert("Upload failed. Please try again.");
+    }
+});
+</script>
+
+</body>
+</html>
+";
+
+document.getElementById("customSubmitForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const form = new FormData(this);
+
+    const response = await fetch(UPLOAD_URL, {
+      method: "POST",
+      body: form
+    });
+
+    if (response.ok) {
+      window.location.href = "submission_success.html";
+    } else {
+      alert("Upload failed. Please try again.");
+    }
+});
+</script>
+
+</body>
+</html>
+";
 
 document.getElementById("customSubmitForm").addEventListener("submit", async function(e) {
     e.preventDefault();
