@@ -1,178 +1,201 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Submit Manuscript | Journal of Addiction and Mental Health</title>
-  <link rel="stylesheet" href="assets/style.css">
-
-  <style>
-    body {
-      background: #f4f7fb;
-      font-family: "Helvetica Neue", Arial, sans-serif;
-    }
-
-    .submission-wrapper {
-      max-width: 850px;
-      margin: 60px auto;
-      padding: 40px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-    }
-
-    h2 {
-      color: #004080;
-      text-align: center;
-      margin-bottom: 10px;
-      font-size: 2rem;
-    }
-
-    .subtitle {
-      text-align: center;
-      color: #333;
-      margin-bottom: 30px;
-      font-size: 1.1rem;
-    }
-
-    label {
-      display: block;
-      font-weight: bold;
-      color: #002d66;
-      margin-bottom: 5px;
-    }
-
-    input, textarea, select {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #cdd7e6;
-      background: #fdfdfd;
-      border-radius: 8px;
-      margin-bottom: 18px;
-      font-size: 1rem;
-    }
-
-    textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    input[type="file"] {
-      padding: 6px;
-      background: #ffffff;
-    }
-
-    .button-submit {
-      background: #004080;
-      color: white;
-      padding: 14px 24px;
-      border: none;
-      border-radius: 8px;
-      font-size: 1.1rem;
-      cursor: pointer;
-      width: 100%;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-
-    .button-submit:hover {
-      background: #002d66;
-    }
-
-    .info-box {
-      background: #eaf3ff;
-      padding: 18px;
-      border-left: 5px solid #004080;
-      margin-bottom: 30px;
-      border-radius: 6px;
-      font-size: 0.95rem;
-    }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Submit Manuscript | Journal of Addiction and Mental Health</title>
+<link rel="stylesheet" href="assets/style.css" />
+<style>
+  /* compact page-specific CSS */
+  body { background:#f4f7fb; font-family: "Helvetica Neue", Arial, sans-serif; margin:0; }
+  header { background:linear-gradient(90deg,#00264d,#004080); color:#fff; padding:18px 20px; text-align:center; }
+  header nav a { color:#fff; margin:0 8px; text-decoration:none; font-weight:600; }
+  .wrap { max-width:820px; margin:30px auto; background:#fff; padding:28px; border-radius:10px; box-shadow:0 6px 18px rgba(0,0,0,0.06); }
+  h2 { color:#004080; margin-top:0; }
+  form { display:grid; gap:12px; }
+  label { font-weight:700; color:#333; }
+  input[type="text"], input[type="email"], textarea { padding:10px; border-radius:6px; border:1px solid #d7e0ee; font-size:1rem; }
+  textarea { min-height:120px; }
+  .row { display:flex; gap:12px; }
+  .row > * { flex:1; }
+  input[type="file"] { padding:6px; }
+  .muted { color:#666; font-size:0.95rem; }
+  button { background:#004080; color:#fff; padding:12px 18px; border:0; border-radius:8px; font-weight:700; cursor:pointer; }
+  .ok { background:#1aa334; }
+  .error { background:#c52121; }
+  .progress { margin-top:6px; font-size:0.95rem; color:#333; }
+  .small { font-size:0.9rem; color:#666; }
+  .center { text-align:center; }
+  @media (max-width:640px){ .row { flex-direction:column; } }
+</style>
+<!-- Replace with your reCAPTCHA site key if using reCAPTCHA -->
+<script src="https://www.google.com/recaptcha/api.js?render=your-recaptcha-site-key"></script>
 </head>
-
 <body>
-
 <header>
   <h1>Journal of Addiction and Mental Health</h1>
   <nav>
     <a href="index.html">Home</a>
-    <a href="submission.html" style="color:#ffd700;">Submit Paper</a>
-    <a href="track.html">Track Submission</a>
-    <a href="#contact">Contact</a>
+    <a href="submission.html" style="color:#ffd700">Submit</a>
+    <a href="track.html">Track</a>
   </nav>
 </header>
 
-<div class="submission-wrapper">
-
+<main class="wrap">
   <h2>Manuscript Submission</h2>
-  <p class="subtitle">Please complete all fields and upload your manuscript (APA 7th, .docx/.pdf).</p>
+  <p class="muted">Please follow APA 7th. Upload manuscript and plagiarism report. Maximum file size <strong id="maxSizeLabel">10 MB</strong>.</p>
 
-  <div class="info-box">
-    ✔ Your submission will generate an automatic confirmation email.<br>
-    ✔ Manuscript & plagiarism reports are securely stored in Google Drive.<br>
-    ✔ You will receive a Submission ID for tracking.
-  </div>
+  <form id="frm">
+    <label>Author name</label>
+    <input name="author" id="author" type="text" required />
 
-  <!-- ✨ Custom Form Start -->
-  <form id="customSubmitForm">
-
-    <label>Author Full Name</label>
-    <input type="text" name="name" required>
-
-    <label>Email Address</label>
-    <input type="email" name="email" required>
+    <label>Email</label>
+    <input name="email" id="email" type="email" required />
 
     <label>Affiliation</label>
-    <input type="text" name="affiliation" required>
+    <input name="affiliation" id="affiliation" type="text" required />
 
-    <label>Manuscript Title</label>
-    <input type="text" name="title" required>
+    <label>Paper title</label>
+    <input name="title" id="title" type="text" required />
 
-    <label>Abstract (paste here)</label>
-    <textarea name="abstract" required></textarea>
+    <label>Abstract</label>
+    <textarea name="abstract" id="abstract" required></textarea>
 
-    <label>Upload Manuscript (.docx or .pdf)</label>
-    <input type="file" name="manuscript" accept=".doc,.docx,.pdf" required>
+    <label>Manuscript (.docx or .pdf)</label>
+    <input id="manuscript" type="file" accept=".doc,.docx,.pdf" required />
 
-    <label>Upload Plagiarism Report (.pdf)</label>
-    <input type="file" name="plagreport" accept=".pdf" required>
+    <label>Plagiarism report (.pdf)</label>
+    <input id="plagiarism" type="file" accept=".pdf" required />
 
-    <button class="button-submit" type="submit">Submit Paper</button>
+    <div class="row">
+      <div class="small">By submitting you confirm authorship and original work.</div>
+      <div class="center"><button id="submitBtn" type="submit">Submit Manuscript</button></div>
+    </div>
 
+    <div id="progress" class="progress" aria-live="polite"></div>
   </form>
-  <!-- ✨ Custom Form End -->
-
-</div>
-
-<footer>
-  <p>© 2025 Journal of Addiction and Mental Health — Society for Addiction Psychology</p>
-</footer>
-
+</main>
 
 <script>
 /*
-  🔥 This JavaScript is READY for connecting to Google Apps Script File Upload API.
-  When you're ready, paste your Apps Script URL into UPLOAD_URL.
+  CLIENT NOTES:
+  - Replace BELOW placeholders:
+      const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyJdnl-2yxeao3g6sdM87JsiEUY7G2-XClTjx2zdga-5W3JxHleTx-brWlccUg-ws8/exec';
+      const SECRET_TOKEN = '11oo95';
+      const RECAPTCHA_SITE_KEY = '6LeUqA4sAAAAAOSafXBLDIfNdhzQFM5O5toL_gAB' (if using)
+  - Max file size (bytes)
 */
-const UPLOAD_URL = "https://script.google.com/macros/s/AKfycbylAuVXnB_aYqZwuYOx1KzE928UEPq0-ayKRXlaEXTEDkXkzh3o-m6KtO42RdWQ_nXq/exec";
 
-document.getElementById("customSubmitForm").addEventListener("submit", async function(e) {
-    e.preventDefault();
+const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyJdnl-2yxeao3g6sdM87JsiEUY7G2-XClTjx2zdga-5W3JxHleTx-brWlccUg-ws8/exec';
+const SECRET_TOKEN = '11oo95';
+const RECAPTCHA_SITE_KEY = '6LeUqA4sAAAAAOSafXBLDIfNdhzQFM5O5toL_gAB';
 
-    const form = new FormData(this);
+const MAX_BYTES = 10 * 1024 * 1024; // 10 MB file size limit
+document.getElementById('maxSizeLabel').innerText = (MAX_BYTES/1024/1024) + ' MB';
 
-    const response = await fetch(UPLOAD_URL, {
-      method: "POST",
-      body: form
+const form = document.getElementById('frm');
+const progress = document.getElementById('progress');
+const submitBtn = document.getElementById('submitBtn');
+
+async function getReCaptchaToken() {
+  if (!RECAPTCHA_SITE_KEY || RECAPTCHA_SITE_KEY.includes('REPLACE')) return null;
+  try {
+    const token = await grecaptcha.execute(RECAPTCHA_SITE_KEY, {action: 'submit'});
+    return token;
+  } catch (e) {
+    console.warn('reCAPTCHA failed', e);
+    return null;
+  }
+}
+
+form.addEventListener('submit', async (ev) => {
+  ev.preventDefault();
+  submitBtn.disabled = true;
+  progress.textContent = 'Preparing files...';
+
+  // collect fields
+  const author = document.getElementById('author').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const affiliation = document.getElementById('affiliation').value.trim();
+  const title = document.getElementById('title').value.trim();
+  const abstract = document.getElementById('abstract').value.trim();
+
+  // files
+  const manuscriptInput = document.getElementById('manuscript');
+  const plagInput = document.getElementById('plagiarism');
+  if (!manuscriptInput.files[0] || !plagInput.files[0]) {
+    progress.textContent = 'Please attach both manuscript and plagiarism report.';
+    submitBtn.disabled = false;
+    return;
+  }
+
+  const mFile = manuscriptInput.files[0];
+  const pFile = plagInput.files[0];
+
+  if (mFile.size > MAX_BYTES || pFile.size > MAX_BYTES) {
+    progress.textContent = 'One of the files exceeds the maximum allowed size (' + (MAX_BYTES/1024/1024) + ' MB).';
+    submitBtn.disabled = false;
+    return;
+  }
+
+  try {
+    progress.textContent = 'Generating tokens...';
+    const recaptchaToken = await getReCaptchaToken();
+
+    // read files as base64
+    progress.textContent = 'Encoding files...';
+    const [mBase,mType,mName] = await fileToBase64(mFile);
+    const [pBase,pType,pName] = await fileToBase64(pFile);
+
+    // build payload
+    const payload = {
+      secretToken: SECRET_TOKEN,
+      author, email, affiliation, title, abstract,
+      files: [
+        { filename: mName, mime: mType, b64: mBase },
+        { filename: pName, mime: pType, b64: pBase }
+      ],
+      recaptchaToken: recaptchaToken || ''
+    };
+
+    progress.textContent = 'Uploading to server... (may take a few seconds)';
+    const res = await fetch(WEB_APP_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
     });
 
-    if (response.ok) {
-      window.location.href = "submission_success.html";
+    const result = await res.json();
+    if (res.ok && result.success) {
+      progress.textContent = 'Submission successful! Your Submission ID: ' + result.submissionId;
+      // redirect to thank you page
+      window.location.href = 'thankyou.html?sid=' + encodeURIComponent(result.submissionId);
     } else {
-      alert("Upload failed. Please try again.");
+      progress.textContent = 'Submission failed: ' + (result.message || res.statusText);
+      submitBtn.disabled = false;
     }
+  } catch (err) {
+    console.error(err);
+    progress.textContent = 'Submission error: ' + err.message;
+    submitBtn.disabled = false;
+  }
 });
-</script>
 
+function fileToBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = function() {
+      // result like "data:application/pdf;base64,JVBERi0x..."
+      const parts = reader.result.split(',');
+      const meta = parts[0]; // data:mime;base64
+      const b64 = parts[1];
+      const mime = meta.split(':')[1].split(';')[0];
+      resolve([b64, mime, file.name]);
+    };
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+</script>
 </body>
 </html>
