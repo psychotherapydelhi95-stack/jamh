@@ -71,24 +71,44 @@
   </footer>
 
   <script>
-    // Demo-only client-side map of submission IDs to statuses.
-    // Replace this logic with a secure AJAX fetch to your Google Sheets JSON endpoint.
-    const demoDB = {
-      "JAMH-2025-0001": { status: 'Received', date: '2025-10-12', note: 'Manuscript uploaded and awaiting assignment' },
-      "JAMH-2025-0002": { status: 'Under Review', date: '2025-10-25', note: 'Assigned to 2 reviewers' },
-      "JAMH-2025-0003": { status: 'Decision: Minor Revision', date: '2025-11-05', note: 'Please submit revised manuscript within 30 days' }
+    // Live Google Sheet endpoint
+const API_URL = "https://script.google.com/macros/s/AKfycbwxVpB7515Y-XBSwCjf2mEVPltpfh-cVgzPD6bxhn_Kt8SkV_GbhDGzSVXhM92XeoyC/exec";
+
     };
 
     const checkBtn = document.getElementById('checkBtn');
     const statusCard = document.getElementById('statusCard');
 
-    checkBtn.addEventListener('click', () => {
-      const id = document.getElementById('submissionId').value.trim().toUpperCase();
-      statusCard.style.display = 'block';
+    checkBtn.addEventListener("click", () => {
+  const id = submissionId.value.trim();
 
-      if (!id) {
-        statusCard.innerHTML = '<div class="status-entry"><div>Please enter a Submission ID.</div></div>';
+  if (!id) {
+    statusCard.style.display = "block";
+    statusCard.innerHTML = "Please enter a Submission ID.";
+    return;
+  }
+
+  fetch(`${API_URL}?id=${encodeURIComponent(id)}`)
+    .then(r => r.json())
+    .then(data => {
+      statusCard.style.display = "block";
+
+      if (data.error) {
+        statusCard.innerHTML = `<strong>${id}</strong> not found.`;
         return;
+      }
+
+      statusCard.innerHTML = `
+        <strong>Submission ID:</strong> ${data.SubmissionID}<br>
+        <strong>Status:</strong> ${data.Status}<br>
+        <strong>Last Updated:</strong> ${data.LastUpdated}<br>
+        <strong>Note:</strong> ${data.Note}
+      `;
+    }).catch(err => {
+      statusCard.innerHTML = "Error connecting to the server.";
+    });
+});
+
       }
 
       // Demo lookup
