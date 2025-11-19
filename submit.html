@@ -1,105 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Submit Manuscript | Journal of Addiction and Mental Health</title>
-  <link rel="stylesheet" href="assets/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit Manuscript | JAMH</title>
+  <link rel="stylesheet" href="assets/style.css">
 
   <style>
     body {
-      background: #f4f7fb;
-      margin: 0;
-      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-family: 'Inter', Arial, sans-serif;
+      background:#f4f7fb;
+      margin:0;
+    }
+    header {
+      background:white;
+      border-bottom:1px solid #eee;
+      padding:15px 25px;
+      position:sticky;
+      top:0;
+      z-index:20;
+    }
+    header h1 {
+      margin:0;
+      font-size:1.8rem;
+      color:#003366;
+      font-weight:700;
+    }
+    nav ul {
+      list-style:none;
+      display:flex;
+      gap:20px;
+      padding:0;
+      margin:10px 0 0 0;
+    }
+    nav a {
+      text-decoration:none;
+      font-weight:600;
+      color:#333;
+    }
+    nav a:hover { color:#0066cc; }
+
+    .container {
+      max-width:900px;
+      margin:40px auto;
+      padding:0 20px;
     }
 
-    .submission-box {
-      max-width: 800px;
-      background: #ffffff;
-      margin: 50px auto;
-      padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      text-align: center;
+    .section-box {
+      background:white;
+      padding:30px;
+      border-radius:12px;
+      border:1px solid #d3e6ff;
+      box-shadow:0 2px 6px rgba(0,0,0,0.06);
     }
 
     h2 {
-      color: #004080;
-      font-size: 2rem;
-      margin-bottom: 10px;
-    }
-
-    p {
-      color: #444;
-      font-size: 1.1rem;
-      line-height: 1.6;
+      color:#003366;
+      border-left:5px solid #4da3ff;
+      padding-left:10px;
     }
 
     .submit-btn {
-      margin-top: 25px;
-      display: inline-block;
-      background: #004080;
-      color: white;
-      padding: 15px 30px;
-      font-size: 1.1rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
+      display:inline-block;
+      background:#005fcc;
+      color:white;
+      padding:14px 24px;
+      border-radius:8px;
+      font-size:1.1rem;
+      text-decoration:none;
+      font-weight:600;
+      margin-top:20px;
     }
-
-    .submit-btn:hover {
-      background: #002d66;
-    }
-
-    .note-box {
-      margin-top: 25px;
-      padding: 15px;
-      background: #eaf3ff;
-      border-left: 5px solid #004080;
-      text-align: left;
-      border-radius: 8px;
-      font-size: 0.95rem;
-    }
+    .submit-btn:hover { background:#004a99; }
 
     footer {
-      margin-top: 40px;
+      text-align:center;
+      padding:25px;
+      background:#eef4ff;
+      margin-top:40px;
+      font-size:0.9rem;
     }
   </style>
 </head>
+
 <body>
 
-  <!-- Header (same as your index.html) -->
-  <header>
-    <h1>Journal of Addiction and Mental Health</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="submit.html" style="color:#ffd700;">Submit Paper</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<header>
+  <h1>Journal of Addiction and Mental Health</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="guidelines.html">Guidelines</a></li>
+      <li><a href="submit.html" style="color:#0066cc;">Submit Manuscript</a></li>
+      <li><a href="track.html">Track Submission</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <!-- Submission Box -->
-  <div class="submission-box">
+<div class="container">
+  <div class="section-box">
     <h2>Submit Your Manuscript</h2>
-    <p>
-      The Journal of Addiction and Mental Health accepts manuscript submissions  
-      via a secure Google Form with file upload support.
-    </p>
+    <p>Your manuscript will be securely uploaded to Google Drive linked with <strong>jamh.editor@gmail.com</strong>. You will also receive an automatic confirmation email.</p>
 
-    <p><strong>Automatic confirmation email</strong> will be sent to you after submission.</p>
-
-    <!-- 🔗 Submission Button -->
-    <a class="submit-btn" href="https://forms.gle/BaFJZfsNu3KJURCr6" target="_blank">
+    <!-- OPEN GOOGLE FORM IN NEW TAB -->
+    <a href="https://forms.gle/FgmmE4cG2GNM88QA9" target="_blank" class="submit-btn">
       Open Submission Form
     </a>
+  </div>
+</div>
 
-      </div>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Journal of Addiction and Mental Health — Society for Addiction Psychology</p>
-  </footer>
+<footer>
+  © 2025 Journal of Addiction and Mental Health — Society for Addiction Psychology
+</footer>
 
 </body>
 </html>
