@@ -7,7 +7,14 @@
   <link rel="stylesheet" href="assets/style.css">
 
   <style>
-    body { font-family: 'Inter', Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; color: #222; }
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #222;
+    }
+
     .container { max-width: 1200px; margin: auto; padding: 20px; }
 
     /* HERO */
@@ -17,25 +24,27 @@
       color: white;
       text-align: center;
     }
-    .hero h1 { font-size: 3rem; margin-bottom: 10px; font-weight: 700; }
-    .hero p { font-size: 1.2rem; max-width: 700px; margin: auto; }
+    .hero h1 { font-size: 3rem; font-weight: 700; margin-bottom: 10px; }
+    .hero p { font-size: 1.2rem; max-width: 700px; margin: auto; opacity: 0.95; }
 
-    header { background: #ffffff; border-bottom: 1px solid #eee; padding: 10px 20px; }
-    nav ul { list-style: none; padding: 0; display: flex; gap: 20px; }
+    /* HEADER */
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #eee;
+      padding: 10px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    nav ul { list-style: none; display: flex; gap: 20px; padding: 0; margin: 0; }
     nav a { text-decoration: none; font-weight: 600; color: #333; }
     nav a:hover { color: #0066cc; }
 
     .section { margin-top: 60px; }
     h2 { font-size: 2rem; margin-bottom: 15px; }
 
-    /* Image blocks */
-    .img-section {
-      width: 100%;
-      border-radius: 6px;
-      margin: 20px 0;
-    }
-
-    /* Editorial board card */
+    /* Editor card */
     .editor-card {
       display: flex;
       gap: 20px;
@@ -45,6 +54,7 @@
       margin-top: 20px;
       align-items: center;
     }
+
     .editor-card img {
       width: 160px;
       height: 160px;
@@ -52,15 +62,14 @@
       border-radius: 8px;
     }
 
-    /* Articles */
     .paper {
       border-bottom: 1px solid #ddd;
       padding: 20px 0;
     }
     .paper h3 { margin: 0 0 10px; }
+
     .meta { font-size: 0.9em; color: #555; }
 
-    /* Footer */
     footer {
       background: #f5f5f5;
       padding: 25px 20px;
@@ -68,6 +77,28 @@
       text-align: center;
       font-size: 0.9rem;
     }
+
+    /* Submit Button Block */
+    .submit-box {
+      margin-top: 20px;
+      padding: 20px;
+      background: #eef7ff;
+      border-left: 4px solid #0073e6;
+      border-radius: 6px;
+    }
+
+    .submit-btn {
+      display: inline-block;
+      background: #0066cc;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 6px;
+      font-weight: 600;
+      text-decoration: none;
+      margin-top: 10px;
+    }
+
+    .submit-btn:hover { background: #004c99; }
   </style>
 </head>
 
@@ -78,7 +109,7 @@
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#editors">Editorial Board</a></li>
-      <li><a href="#call">Submit Manuscripts</a></li>
+      <li><a href="#submit">Submit Manuscript</a></li>
       <li><a href="#contents">Contents</a></li>
       <li><a href="#issue">Current Issue</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -93,69 +124,53 @@
 </div>
 
 
-
 <main class="container">
 
   <!-- ABOUT -->
   <section id="about" class="section">
     <h2>About the Journal</h2>
-
-
-
     <p>Official journal of the Society for Addiction Psychology (SAP), established in 2022. Peer-reviewed, quarterly publication focusing on substance use disorders and mental health. Ensures strict plagiarism limits (&lt;20%). Publishes original articles, invited articles, reviews, case reports, opinions, and letters. ISSN 3107-8338.</p>
   </section>
 
 
-
-  <!-- EDITORS -->
+  <!-- EDITORIAL BOARD -->
   <section id="editors" class="section">
-  <h2>Editorial Board</h2>
-<div>
-      <p><strong> Dr. R.K. Dhamija:</strong> Director IHBAS, Delhi-110095 dhamijark@gov.in</p>
-      <p><strong> Dr. Naved Iqbal Professor
-:</strong> Department of Psychology, Jamia Milia University, Delhi navedi2005@gmail.com</p>
-      <p><strong> Dr. Nitin Anand Professor
-:</strong> Department of Clinical Psychology, NIMHANS, Bengaluru-560029 nitinanand19800@gmail.com</p>
-      <p><strong>Dr. Vishal Dhiman
-:</strong> Addl Professor Department of Psychiatry,
-AIIMS, Rishikesh vishal.psyc@aiimsrishikesh.edu.in</p>
-  <p><strong> Dr. Sandhya Isabella Fernandez 
-:</strong> Clinical Psychologist and Psychology Advisor 32 Killarney Road,Frankton Hamilton, New Zealand fernandezsandhya@gmail.com</p>
-  <p><strong>Renjith R. Pillai:</strong> Associate Professor of Psychiatric Social Work Department of Psychiatry PGIMER, Chandigarh renjithpsw@yahoo.com</p>
-<p><strong>Dr Anatolii Tsarkov: </strong>
-Consultant Adult Psychiatrist and Senior Lecturer UNZA
-P.O. Box UTH 7 Lusaka 10101 Zambia anatoliydoc@gmail.com</p>
-
-    </div>
-  <section id="editors" class="section">
-  <h2>Editors</h2>
-  <div class="editor-card">
-    <img src="assets/images/NG-pp.jpg" alt="Chief Editor Photo" class="editor-photo">
+    <h2>Editorial Board</h2>
 
     <div>
-      <p><strong>Chief Editor:</strong> Dr. Naveen Grover</p>
-      <p><strong>Associate Editors:</strong> Dr. Ajay Goyal; Dr. Azmat Jahan</p>
-      <p><strong>Publisher:</strong> Society for Addiction Psychology</p>
-      <p><strong>Address:</strong> Room No. 121, Academic Block, IHBAS, Delhi–110095</p>
+      <p><strong>Dr. R.K. Dhamija:</strong> Director IHBAS, Delhi • dhamijark@gov.in</p>
+      <p><strong>Dr. Naved Iqbal:</strong> Professor, Jamia Milia University • navedi2005@gmail.com</p>
+      <p><strong>Dr. Nitin Anand:</strong> Professor, NIMHANS • nitinanand19800@gmail.com</p>
+      <p><strong>Dr. Vishal Dhiman:</strong> AIIMS Rishikesh • vishal.psyc@aiimsrishikesh.edu.in</p>
+      <p><strong>Dr. Sandhya Isabella:</strong> Clinical Psychologist, New Zealand • fernandezsandhya@gmail.com</p>
+      <p><strong>Renjith R. Pillai:</strong> PGIMER Chandigarh • renjithpsw@yahoo.com</p>
+      <p><strong>Dr Anatolii Tsarkov:</strong> UNZA Zambia • anatoliydoc@gmail.com</p>
     </div>
-  </div>
-</section>
 
+    <h2 style="margin-top:40px;">Editors</h2>
 
+    <div class="editor-card">
+      <img src="assets/images/NG-pp.jpg" alt="Chief Editor Photo">
+      <div>
+        <p><strong>Chief Editor:</strong> Dr. Naveen Grover</p>
+        <p><strong>Associate Editors:</strong> Dr. Ajay Goyal; Dr. Azmat Jahan</p>
+        <p><strong>Publisher:</strong> Society for Addiction Psychology</p>
+        <p><strong>Address:</strong> Room No. 121, Academic Block, IHBAS, Delhi–110095</p>
+      </div>
+    </div>
+  </section>
 
 
   <!-- SUBMIT MANUSCRIPTS -->
+  <section id="submit" class="section">
+    <h2>Submit Manuscript</h2>
 
-  
+    <div class="submit-box">
+      <p>We invite research articles, reviews, meta-analyses, case studies, conceptual papers, field studies, opinion pieces, and letters related to addiction and mental health. Follow APA 7th Edition formatting guidelines.</p>
 
-  <p>
-    Inviting submissions including research articles, meta-analyses, reviews, conceptual work, 
-    case studies, field studies, opinion pieces, and letters related to addiction and mental health.
-    Follow APA 7th Edition formatting.
-  </p>
-
-    </section>
-
+      <a href="guidelines.html" class="submit-btn">Submit Your Manuscript</a>
+    </div>
+  </section>
 
 
   <!-- CONTENTS -->
@@ -170,14 +185,12 @@ P.O. Box UTH 7 Lusaka 10101 Zambia anatoliydoc@gmail.com</p>
   </section>
 
 
-
   <!-- CURRENT ISSUE -->
   <section id="issue" class="section">
+
     <h3>From the Editor’s Desk</h3>
 
     <h3>Review Articles</h3>
-
-    
 
     <article class="paper">
       <h3><a href="articles/Article1.pdf" target="_blank">“#WorkoutwithSocialMedia”: Ameliorating effects...</a></h3>
@@ -226,7 +239,6 @@ P.O. Box UTH 7 Lusaka 10101 Zambia anatoliydoc@gmail.com</p>
   </section>
 
 
-
   <!-- CONTACT -->
   <section id="contact" class="section">
     <h2>Contact</h2>
@@ -237,7 +249,6 @@ P.O. Box UTH 7 Lusaka 10101 Zambia anatoliydoc@gmail.com</p>
   </section>
 
 </main>
-
 
 
 <footer>
