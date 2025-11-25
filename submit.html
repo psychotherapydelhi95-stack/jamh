@@ -1,118 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Submit Manuscript | JAMH</title>
-  <link rel="stylesheet" href="assets/style.css">
-
-  <style>
-    body {
-      font-family: 'Inter', Arial, sans-serif;
-      background:#f4f7fb;
-      margin:0;
-    }
-    header {
-      background:white;
-      border-bottom:1px solid #eee;
-      padding:15px 25px;
-      position:sticky;
-      top:0;
-      z-index:20;
-    }
-    header h1 {
-      margin:0;
-      font-size:1.8rem;
-      color:#003366;
-      font-weight:700;
-    }
-    nav ul {
-      list-style:none;
-      display:flex;
-      gap:20px;
-      padding:0;
-      margin:10px 0 0 0;
-    }
-    nav a {
-      text-decoration:none;
-      font-weight:600;
-      color:#333;
-    }
-    nav a:hover { color:#0066cc; }
-
-    .container {
-      max-width:900px;
-      margin:40px auto;
-      padding:0 20px;
-    }
-
-    .section-box {
-      background:white;
-      padding:30px;
-      border-radius:12px;
-      border:1px solid #d3e6ff;
-      box-shadow:0 2px 6px rgba(0,0,0,0.06);
-    }
-
-    h2 {
-      color:#003366;
-      border-left:5px solid #4da3ff;
-      padding-left:10px;
-    }
-
-    .submit-btn {
-      display:inline-block;
-      background:#005fcc;
-      color:white;
-      padding:14px 24px;
-      border-radius:8px;
-      font-size:1.1rem;
-      text-decoration:none;
-      font-weight:600;
-      margin-top:20px;
-    }
-    .submit-btn:hover { background:#004a99; }
-
-    footer {
-      text-align:center;
-      padding:25px;
-      background:#eef4ff;
-      margin-top:40px;
-      font-size:0.9rem;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <title>Submit Manuscript – JAMH</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+  <h1 style="text-align:center;">Submit Your Manuscript</h1>
 
-<header>
-  <h1>Journal of Addiction and Mental Health</h1>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="guidelines.html">Guidelines</a></li>
-      <li><a href="submit.html" style="color:#0066cc;">Submit Manuscript</a></li>
-      <li><a href="track.html">Track Submission</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+  <div style="max-width:600px;margin:auto;padding:20px;">
+    <form id="jamhForm">
+      <label>Full Name</label>
+      <input type="text" name="name" required><br><br>
 
-<div class="container">
-  <div class="section-box">
-    <h2>Submit Your Manuscript</h2>
-    <p>Your manuscript will be securely uploaded to Google Drive linked with <strong>jamh.editor@gmail.com</strong>. You will also receive an automatic confirmation email.</p>
+      <label>Email</label>
+      <input type="email" name="email" required><br><br>
 
-    <!-- OPEN GOOGLE FORM IN NEW TAB -->
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLScBYec8mb-Ejp_EVwHel3wkQOC6qhbp-FbqmNc1f9jM2VD7mg/viewform?usp=header" target="_blank" class="submit-btn">
-      Open Submission Form
-    </a>
+      <label>Manuscript Title</label>
+      <input type="text" name="title" required><br><br>
+
+      <label>Abstract</label>
+      <textarea name="abstract" required></textarea><br><br>
+
+      <label>Keywords</label>
+      <textarea name="keywords"></textarea><br><br>
+
+      <label>Upload Manuscript File</label>
+      <input type="file" id="file" required /><br><br>
+
+      <button type="submit">Submit Manuscript</button>
+    </form>
   </div>
-</div>
 
-<footer>
-  © 2025 Journal of Addiction and Mental Health — Society for Addiction Psychology
-</footer>
+  <script>
+    document.getElementById("jamhForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
 
+      const file = document.getElementById("file").files[0];
+      const reader = new FileReader();
+
+      reader.onload = async function() {
+        const base64 = reader.result.split(',')[1];
+
+        const formData = new URLSearchParams();
+        formData.append("name", e.target.name.value);
+        formData.append("email", e.target.email.value);
+        formData.append("title", e.target.title.value);
+        formData.append("abstract", e.target.abstract.value);
+        formData.append("keywords", e.target.keywords.value);
+        formData.append("fileName", file.name);
+        formData.append("fileType", file.type);
+        formData.append("fileContent", base64);
+
+        const res = await fetch("https://script.google.com/macros/s/AKfycbzeaIKV_76Ceznb9ISWFPw0n28a7jEFq3fEuGDTiZSQCG8HGOM62BwA-8NYRdp5DMG7/exec", {
+          method: "POST",
+          body: formData,
+        });
+
+        const result = await res.json();
+        alert("Submitted successfully! Submission ID: " + result.submissionID);
+      };
+
+      reader.readAsDataURL(file);
+    });
+  </script>
 </body>
 </html>
