@@ -1,4 +1,8 @@
 /* assets/style.css */
+<body>
+  <main class="section">
+    
+  
 body {
   margin: 0;
   padding: 0;
@@ -92,5 +96,6 @@ footer {
     padding: 24px 16px;
   }
 }
-
+</main>
+</body>
 
