@@ -3,47 +3,21 @@
  * Fetches article data from Google Apps Script API and provides helper functions
  */
 
-// Google Apps Script Web App URL
-const API_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwcq6COyb4e-Cr5XoUChvGNLwN6_vQAEEsJyuLg0q6coddgNynwkudjo24tMs5z7Whj/exec';
-
-// Cache to store fetched data (reduces API calls)
-let articlesCache = null;
-let cacheTimestamp = null;
-const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
+// Local Data Source is loaded via script tag in HTML to avoid CORS issues
+// window.JAMH_DATA should be defined by assets/issues-data.js
 
 /**
- * Fetch articles data from API with caching
+ * Fetch articles data from local JS variable
  * @returns {Promise<Object>} Articles data
  */
 async function fetchArticles() {
-    // Return cached data if still valid
-    if (articlesCache && cacheTimestamp && (Date.now() - cacheTimestamp < CACHE_DURATION)) {
-        return articlesCache;
+    // Return data from global variable
+    if (window.JAMH_DATA) {
+        return window.JAMH_DATA;
     }
 
-    try {
-        const response = await fetch(API_ENDPOINT);
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const data = await response.json();
-
-        if (!data.success) {
-            throw new Error(data.error || 'Failed to fetch articles');
-        }
-
-        // Update cache
-        articlesCache = data;
-        cacheTimestamp = Date.now();
-
-        return data;
-
-    } catch (error) {
-        console.error('Error fetching articles:', error);
-        throw error;
-    }
+    console.error('JAMH_DATA not found. Make sure assets/issues-data.js is loaded.');
+    throw new Error('Failed to load articles data');
 }
 
 /**
