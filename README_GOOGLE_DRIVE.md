@@ -83,3 +83,4 @@ Your website will now:
 - `assets/articles-loader.js` - Fetches data from API
 - `issue.html` - Dynamic article display page
 - `index.html` - Updated to load issues dynamically
+ 
